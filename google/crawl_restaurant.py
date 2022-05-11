@@ -6,8 +6,24 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import os
-from time import sleep
 from datetime import datetime
+
+import logging
+from tqdm import tqdm
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+logger_url = logging.getLogger("get_restaurant_url")
+file_logger = logging.FileHandler(os.path.join(BASE_DIR, 'log/get_restaurant_url.log'), mode='a')
+file_logger.setFormatter(logging.Formatter('[%(asctime)s]:[%(levelname)s]:%(message)s'))
+logger_url.setLevel(logging.INFO)
+logger_url.addHandler(file_logger)
+
+logger_details = logging.getLogger("crawl_restaurant_details")
+file_logger = logging.FileHandler(os.path.join(BASE_DIR, 'log/crawl_restaurant_details.log'), mode='a')
+file_logger.setFormatter(logging.Formatter('[%(asctime)s]:[%(levelname)s]:%(message)s'))
+logger_details.setLevel(logging.INFO)
+logger_details.addHandler(file_logger)
 
 
 def initDriver():
@@ -24,13 +40,26 @@ def initDriver():
     chrome_options.add_argument("--disable-dev-shm-usage")  # overcome limited resource problems
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_argument('disable-infobars')
+    chrome_options.add_argument('--log-level=3')
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH,
-                              options=chrome_options
+                              options=chrome_options,
                               )
     return driver
 
 
-def read_ds():
+def remove_accents(input_str):
+    s1 = u'ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ'
+    s0 = u'AAAAEEEIIOOOOUUYaaaaeeeiioooouuyAaDdIiUuOoUuAaAaAaAaAaAaAaAaAaAaAaAaEeEeEeEeEeEeEeEeIiIiOoOoOoOoOoOoOoOoOoOoOoOoUuUuUuUuUuUuUuYyYyYyYy'
+    s = ''
+    for c in input_str:
+        if c in s1:
+            s += s0[s1.index(c)]
+        else:
+            s += c
+    return s
+
+def read_ds(logger=logger_url):
+    logger.info('#-------------------------------------------------')
     df = pd.read_csv('./data/DS_tinh_thanh.csv')
     df_hn = df[df['Tỉnh Thành Phố']=='Thành phố Hà Nội']
     list_district = ['Quận Ba Đình', 'Quận Hoàn Kiếm', 'Quận Tây Hồ', 'Quận Cầu Giấy','Quận Đống Đa',
@@ -42,12 +71,13 @@ def read_ds():
     driver = initDriver()
     for town in arr_town[:2]:
         query_search = f'restaurant near {town}'
-        print('query_search:', query_search)
-        crawl_restaurant(driver, query_search, town)
+        logger.info(f'query_search: {remove_accents(query_search)}')
+        crawl_restaurant(driver, query_search, town, logger=logger)
 
     return
 
-def crawl_restaurant(driver, query_search, town):
+def crawl_restaurant(driver, query_search, town, logger):
+    logger.info('Crawling url ...')
     begin = datetime.now()
     driver.get('https://maps.google.com/')
     time.sleep(3)
@@ -71,20 +101,25 @@ def crawl_restaurant(driver, query_search, town):
             time.sleep(5)
             driver.execute_script(script_js)
             arr_link_res = [x.get_attribute('href') for x in driver.find_elements_by_class_name('hfpxzc')]
-            print(len(arr_link_res))
+            # print(len(arr_link_res))
             all_link_res.extend(arr_link_res)
         except Exception as e:
             print(e)
             break
 
+    logger.info(f'all_link_restaurant: {len(all_link_res)}', )
     print(len(all_link_res), all_link_res[10])
     time.sleep(5)
-    with open(f'data/url/restaurant_{town}.txt', 'w') as f:
+    file_save = f'data/url/restaurant_{town}.txt'
+    with open(file_save, 'w') as f:
         for link in all_link_res:
             f.write("%s\n" % link)
         f.close()
 
     end = datetime.now()
+    time_run_minute = (end-begin)/60
+    logger.info(f'Time run {town}: {time_run_minute} minutes')
+    logger.info(f'Save to {remove_accents(file_save)}')
     print(f'Time run {town}: ', (end-begin)/60, 'minutes')
     print()
     # driver.quit()
@@ -93,7 +128,7 @@ def crawl_restaurant(driver, query_search, town):
     return
 
 
-def crawl_restaurant_details(filename):
+def crawl_restaurant_details(filename, logger=logger_details):
     begin = datetime.now()
     file_save = filename.replace('url', 'details')
     file_save = file_save.replace('txt', 'csv')
@@ -190,6 +225,6 @@ def crawl_restaurant_details(filename):
 
 if __name__ =='__main__':
     # crawl_restaurant()
-    # read_ds()
+    read_ds()
 
-    crawl_restaurant_details(filename='./data/url/restaurant_Phường Phúc Xá.txt')
+    # crawl_restaurant_details(filename='./data/url/restaurant_Phường Phúc Xá.txt')

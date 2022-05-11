@@ -1,0 +1,22 @@
+[2022-05-11 10:32:13,582]:[INFO]:query_search: b'restaurant near Ph\xc6\xb0\xe1\xbb\x9dng Ph\xc3\xbac X\xc3\xa1'
+[2022-05-11 10:36:12,506]:[INFO]:query_search: restaurant near Phuong Phuc Xa
+[2022-05-11 10:44:19,754]:[INFO]:query_search: restaurant near Phuong Phuc Xa
+[2022-05-11 10:44:19,754]:[INFO]:Crawling url ...
+[2022-05-11 10:46:35,162]:[INFO]:all_link_restaurant: 220
+[2022-05-11 10:46:40,212]:[INFO]:query_search: restaurant near Phuong Truc Bach
+[2022-05-11 10:46:40,212]:[INFO]:Crawling url ...
+[2022-05-11 10:48:38,066]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:48:39,168]:[INFO]:query_search: restaurant near Phuong Phuc Xa
+[2022-05-11 10:48:39,168]:[INFO]:Crawling url ...
+[2022-05-11 10:49:33,229]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:49:34,715]:[INFO]:query_search: restaurant near Phuong Phuc Xa
+[2022-05-11 10:49:34,715]:[INFO]:Crawling url ...
+[2022-05-11 10:50:58,355]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:51:25,545]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:52:45,954]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:52:54,771]:[INFO]:#-------------------------------------------------
+[2022-05-11 10:52:56,297]:[INFO]:query_search: restaurant near Phuong Phuc Xa
+[2022-05-11 10:52:56,297]:[INFO]:Crawling url ...
+[2022-05-11 10:55:28,190]:[INFO]:all_link_restaurant: 220
+[2022-05-11 10:55:33,235]:[INFO]:query_search: restaurant near Phuong Truc Bach
+[2022-05-11 10:55:33,236]:[INFO]:Crawling url ...
