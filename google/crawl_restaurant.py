@@ -69,7 +69,7 @@ def read_ds(logger=logger_url):
     arr_town = df_hn_core['Phường Xã'].tolist()
 
     driver = initDriver()
-    for town in arr_town[:2]:
+    for town in arr_town[:]:
         query_search = f'restaurant near {town}'
         logger.info(f'query_search: {remove_accents(query_search)}')
         crawl_restaurant(driver, query_search, town, logger=logger)
@@ -77,7 +77,6 @@ def read_ds(logger=logger_url):
     return
 
 def crawl_restaurant(driver, query_search, town, logger):
-    logger.info('Crawling url ...')
     begin = datetime.now()
     driver.get('https://maps.google.com/')
     time.sleep(3)
@@ -85,6 +84,7 @@ def crawl_restaurant(driver, query_search, town, logger):
     inputSearchEle.send_keys(query_search)
     inputSearchEle.send_keys(Keys.ENTER)
     time.sleep(8)
+    logger.info('Scrolling url ...')
     script_js = "function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))};var el_list=document.getElementsByClassName('hfpxzc');var count=1;while(el_list.length<20||count>100){count+=1;el_list=document.getElementsByClassName('hfpxzc');el=el_list[el_list.length-1];el.scrollTop=el.scrollHeight;el.scrollIntoView();await sleep(1000);console.log(el_list.length);if(el_list.length==20){count=1};console.log('count:',count)}"
     driver.execute_script(script_js)
 
@@ -101,10 +101,11 @@ def crawl_restaurant(driver, query_search, town, logger):
             time.sleep(5)
             driver.execute_script(script_js)
             arr_link_res = [x.get_attribute('href') for x in driver.find_elements_by_class_name('hfpxzc')]
-            # print(len(arr_link_res))
+            print(f'Got {len(arr_link_res)} links')
+            # logger.info('Scrolling ...')
             all_link_res.extend(arr_link_res)
         except Exception as e:
-            print(e)
+            print('Finish scroll')
             break
 
     logger.info(f'all_link_restaurant: {len(all_link_res)}', )
@@ -118,7 +119,7 @@ def crawl_restaurant(driver, query_search, town, logger):
 
     end = datetime.now()
     time_run_minute = (end-begin)/60
-    logger.info(f'Time run {town}: {time_run_minute} minutes')
+    logger.info(f'Time run {remove_accents(town)}: {time_run_minute} minutes')
     logger.info(f'Save to {remove_accents(file_save)}')
     print(f'Time run {town}: ', (end-begin)/60, 'minutes')
     print()
