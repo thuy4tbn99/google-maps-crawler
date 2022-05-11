@@ -115,3 +115,301 @@
 [2022-05-11 13:17:24,456]:[INFO]:Time run Phuong Hang Bac: 0:00:02.030848 minutes
 [2022-05-11 13:17:24,456]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
 [2022-05-11 13:17:24,457]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:37:13,338]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:37:15,053]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:37:31,459]:[INFO]:Scrolling url ...
+[2022-05-11 13:39:33,220]:[INFO]:all_link_restaurant: 220
+[2022-05-11 13:39:38,224]:[INFO]:Time run Phuong Hang Bac: 0:00:02.386177 minutes
+[2022-05-11 13:39:38,224]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
+[2022-05-11 13:39:38,373]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:41:06,441]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:41:07,179]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:41:23,113]:[INFO]:Scrolling url ...
+[2022-05-11 13:43:25,065]:[INFO]:all_link_restaurant: 220
+[2022-05-11 13:43:30,068]:[INFO]:Time run Phuong Hang Bac: 0:00:02.381479 minutes
+[2022-05-11 13:43:30,068]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
+[2022-05-11 13:43:30,274]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:44:13,055]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:44:13,261]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:44:29,497]:[INFO]:Scrolling url ...
+[2022-05-11 13:46:31,596]:[INFO]:all_link_restaurant: 220
+[2022-05-11 13:46:36,602]:[INFO]:Time run Phuong Hang Bac: 0:00:02.389021 minutes
+[2022-05-11 13:46:36,602]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
+[2022-05-11 13:46:36,717]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:51:51,726]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:51:51,935]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:52:07,811]:[INFO]:Scrolling url ...
+[2022-05-11 13:54:01,518]:[INFO]:all_link_restaurant: 200
+[2022-05-11 13:54:06,521]:[INFO]:Time run Phuong Hang Bac: 0:00:02.243080 minutes
+[2022-05-11 13:54:06,521]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
+[2022-05-11 13:54:06,640]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:55:00,775]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:55:00,994]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:55:17,448]:[INFO]:Scrolling url ...
+[2022-05-11 13:56:50,890]:[INFO]:#-------------------------------------------------
+[2022-05-11 13:56:51,687]:[INFO]:query_search: restaurant near Phuong Hang Bac
+[2022-05-11 13:57:07,775]:[INFO]:Scrolling url ...
+[2022-05-11 13:59:09,389]:[INFO]:all_link_restaurant: 220
+[2022-05-11 13:59:14,396]:[INFO]:Time run Phuong Hang Bac: 0:00:02.378462 minutes
+[2022-05-11 13:59:14,396]:[INFO]:Save to data/url/restaurant_Phuong Hang Bac.txt
+[2022-05-11 13:59:14,396]:[INFO]:query_search: restaurant near Phuong Hang Gai
+[2022-05-11 13:59:28,949]:[INFO]:Scrolling url ...
+[2022-05-11 14:01:31,707]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:01:36,710]:[INFO]:Time run Phuong Hang Gai: 0:00:02.371897 minutes
+[2022-05-11 14:01:36,710]:[INFO]:Save to data/url/restaurant_Phuong Hang Gai.txt
+[2022-05-11 14:01:36,711]:[INFO]:query_search: restaurant near Phuong Chuong Duong
+[2022-05-11 14:01:51,471]:[INFO]:Scrolling url ...
+[2022-05-11 14:03:38,336]:[INFO]:all_link_restaurant: 180
+[2022-05-11 14:03:43,342]:[INFO]:Time run Phuong Chuong Duong: 0:00:02.110521 minutes
+[2022-05-11 14:03:43,343]:[INFO]:Save to data/url/restaurant_Phuong Chuong Duong.txt
+[2022-05-11 14:03:43,343]:[INFO]:query_search: restaurant near Phuong Hang Trong
+[2022-05-11 14:03:57,838]:[INFO]:Scrolling url ...
+[2022-05-11 14:06:08,714]:[INFO]:all_link_restaurant: 240
+[2022-05-11 14:06:13,720]:[INFO]:Time run Phuong Hang Trong: 0:00:02.506283 minutes
+[2022-05-11 14:06:13,720]:[INFO]:Save to data/url/restaurant_Phuong Hang Trong.txt
+[2022-05-11 14:06:13,721]:[INFO]:query_search: restaurant near Phuong Cua Nam
+[2022-05-11 14:06:28,131]:[INFO]:Scrolling url ...
+[2022-05-11 14:07:40,062]:[INFO]:all_link_restaurant: 103
+[2022-05-11 14:07:45,068]:[INFO]:Time run Phuong Cua Nam: 0:00:01.522455 minutes
+[2022-05-11 14:07:45,068]:[INFO]:Save to data/url/restaurant_Phuong Cua Nam.txt
+[2022-05-11 14:07:45,069]:[INFO]:query_search: restaurant near Phuong Hang Bong
+[2022-05-11 14:07:59,539]:[INFO]:Scrolling url ...
+[2022-05-11 14:09:43,917]:[INFO]:all_link_restaurant: 260
+[2022-05-11 14:09:48,920]:[INFO]:Time run Phuong Hang Bong: 0:00:02.064179 minutes
+[2022-05-11 14:09:48,920]:[INFO]:Save to data/url/restaurant_Phuong Hang Bong.txt
+[2022-05-11 14:09:48,920]:[INFO]:query_search: restaurant near Phuong Trang Tien
+[2022-05-11 14:10:03,431]:[INFO]:Scrolling url ...
+[2022-05-11 14:12:05,993]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:12:10,999]:[INFO]:Time run Phuong Trang Tien: 0:00:02.367984 minutes
+[2022-05-11 14:12:10,999]:[INFO]:Save to data/url/restaurant_Phuong Trang Tien.txt
+[2022-05-11 14:12:11,000]:[INFO]:query_search: restaurant near Phuong Tran Hung Dao
+[2022-05-11 14:12:26,299]:[INFO]:Scrolling url ...
+[2022-05-11 14:14:36,601]:[INFO]:all_link_restaurant: 240
+[2022-05-11 14:14:41,604]:[INFO]:Time run Phuong Tran Hung Dao: 0:00:02.510061 minutes
+[2022-05-11 14:14:41,604]:[INFO]:Save to data/url/restaurant_Phuong Tran Hung Dao.txt
+[2022-05-11 14:14:41,604]:[INFO]:query_search: restaurant near Phuong Phan Chu Trinh
+[2022-05-11 14:14:56,409]:[INFO]:Scrolling url ...
+[2022-05-11 14:16:33,385]:[INFO]:all_link_restaurant: 160
+[2022-05-11 14:16:38,392]:[INFO]:Time run Phuong Phan Chu Trinh: 0:00:01.946458 minutes
+[2022-05-11 14:16:38,392]:[INFO]:Save to data/url/restaurant_Phuong Phan Chu Trinh.txt
+[2022-05-11 14:16:38,392]:[INFO]:query_search: restaurant near Phuong Hang Bai
+[2022-05-11 14:16:54,283]:[INFO]:Scrolling url ...
+[2022-05-11 14:19:13,263]:[INFO]:all_link_restaurant: 260
+[2022-05-11 14:19:18,270]:[INFO]:Time run Phuong Hang Bai: 0:00:02.664630 minutes
+[2022-05-11 14:19:18,270]:[INFO]:Save to data/url/restaurant_Phuong Hang Bai.txt
+[2022-05-11 14:19:18,271]:[INFO]:query_search: restaurant near Phuong Phu Thuong
+[2022-05-11 14:19:33,977]:[INFO]:Scrolling url ...
+[2022-05-11 14:20:54,703]:[INFO]:all_link_restaurant: 120
+[2022-05-11 14:20:59,709]:[INFO]:Time run Phuong Phu Thuong: 0:00:01.690628 minutes
+[2022-05-11 14:20:59,709]:[INFO]:Save to data/url/restaurant_Phuong Phu Thuong.txt
+[2022-05-11 14:20:59,709]:[INFO]:query_search: restaurant near Phuong Nhat Tan
+[2022-05-11 14:21:15,676]:[INFO]:Scrolling url ...
+[2022-05-11 14:22:52,670]:[INFO]:all_link_restaurant: 160
+[2022-05-11 14:22:57,676]:[INFO]:Time run Phuong Nhat Tan: 0:00:01.966099 minutes
+[2022-05-11 14:22:57,676]:[INFO]:Save to data/url/restaurant_Phuong Nhat Tan.txt
+[2022-05-11 14:22:57,676]:[INFO]:query_search: restaurant near Phuong Tu Lien
+[2022-05-11 14:23:14,412]:[INFO]:Scrolling url ...
+[2022-05-11 14:25:08,415]:[INFO]:all_link_restaurant: 200
+[2022-05-11 14:25:13,422]:[INFO]:Time run Phuong Tu Lien: 0:00:02.262424 minutes
+[2022-05-11 14:25:13,422]:[INFO]:Save to data/url/restaurant_Phuong Tu Lien.txt
+[2022-05-11 14:25:13,422]:[INFO]:query_search: restaurant near Phuong Quang An
+[2022-05-11 14:25:28,577]:[INFO]:Scrolling url ...
+[2022-05-11 14:27:06,604]:[INFO]:all_link_restaurant: 162
+[2022-05-11 14:27:11,610]:[INFO]:Time run Phuong Quang An: 0:00:01.969793 minutes
+[2022-05-11 14:27:11,610]:[INFO]:Save to data/url/restaurant_Phuong Quang An.txt
+[2022-05-11 14:27:11,611]:[INFO]:query_search: restaurant near Phuong Xuan La
+[2022-05-11 14:27:28,034]:[INFO]:Scrolling url ...
+[2022-05-11 14:28:56,830]:[INFO]:all_link_restaurant: 147
+[2022-05-11 14:29:01,836]:[INFO]:Time run Phuong Xuan La: 0:00:01.837091 minutes
+[2022-05-11 14:29:01,836]:[INFO]:Save to data/url/restaurant_Phuong Xuan La.txt
+[2022-05-11 14:29:01,837]:[INFO]:query_search: restaurant near Phuong Yen Phu
+[2022-05-11 14:29:18,972]:[INFO]:Scrolling url ...
+[2022-05-11 14:31:22,651]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:31:27,658]:[INFO]:Time run Phuong Yen Phu: 0:00:02.430349 minutes
+[2022-05-11 14:31:27,658]:[INFO]:Save to data/url/restaurant_Phuong Yen Phu.txt
+[2022-05-11 14:31:27,659]:[INFO]:query_search: restaurant near Phuong Buoi
+[2022-05-11 14:31:41,599]:[INFO]:Scrolling url ...
+[2022-05-11 14:33:44,281]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:33:49,288]:[INFO]:Time run Phuong Buoi: 0:00:02.360480 minutes
+[2022-05-11 14:33:49,288]:[INFO]:Save to data/url/restaurant_Phuong Buoi.txt
+[2022-05-11 14:33:49,289]:[INFO]:query_search: restaurant near Phuong Thuy Khue
+[2022-05-11 14:34:02,816]:[INFO]:Scrolling url ...
+[2022-05-11 14:35:39,795]:[INFO]:all_link_restaurant: 160
+[2022-05-11 14:35:44,799]:[INFO]:Time run Phuong Thuy Khue: 0:00:01.925178 minutes
+[2022-05-11 14:35:44,800]:[INFO]:Save to data/url/restaurant_Phuong Thuy Khue.txt
+[2022-05-11 14:35:44,800]:[INFO]:query_search: restaurant near Phuong Nghia Do
+[2022-05-11 14:35:58,453]:[INFO]:Scrolling url ...
+[2022-05-11 14:38:01,181]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:38:06,193]:[INFO]:Time run Phuong Nghia Do: 0:00:02.356540 minutes
+[2022-05-11 14:38:06,193]:[INFO]:Save to data/url/restaurant_Phuong Nghia Do.txt
+[2022-05-11 14:38:06,194]:[INFO]:query_search: restaurant near Phuong Nghia Tan
+[2022-05-11 14:38:19,892]:[INFO]:Scrolling url ...
+[2022-05-11 14:40:30,516]:[INFO]:all_link_restaurant: 240
+[2022-05-11 14:40:35,523]:[INFO]:Time run Phuong Nghia Tan: 0:00:02.488813 minutes
+[2022-05-11 14:40:35,523]:[INFO]:Save to data/url/restaurant_Phuong Nghia Tan.txt
+[2022-05-11 14:40:35,523]:[INFO]:query_search: restaurant near Phuong Mai Dich
+[2022-05-11 14:40:49,391]:[INFO]:Scrolling url ...
+[2022-05-11 14:42:17,531]:[INFO]:all_link_restaurant: 222
+[2022-05-11 14:42:22,537]:[INFO]:Time run Phuong Mai Dich: 0:00:01.783569 minutes
+[2022-05-11 14:42:22,538]:[INFO]:Save to data/url/restaurant_Phuong Mai Dich.txt
+[2022-05-11 14:42:22,538]:[INFO]:query_search: restaurant near Phuong Dich Vong
+[2022-05-11 14:42:36,869]:[INFO]:Scrolling url ...
+[2022-05-11 14:44:39,296]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:44:44,302]:[INFO]:Time run Phuong Dich Vong: 0:00:02.362737 minutes
+[2022-05-11 14:44:44,303]:[INFO]:Save to data/url/restaurant_Phuong Dich Vong.txt
+[2022-05-11 14:44:44,303]:[INFO]:query_search: restaurant near Phuong Dich Vong Hau
+[2022-05-11 14:44:58,086]:[INFO]:Scrolling url ...
+[2022-05-11 14:47:00,509]:[INFO]:all_link_restaurant: 220
+[2022-05-11 14:47:05,517]:[INFO]:Time run Phuong Dich Vong Hau: 0:00:02.353568 minutes
+[2022-05-11 14:47:05,518]:[INFO]:Save to data/url/restaurant_Phuong Dich Vong Hau.txt
+[2022-05-11 14:47:05,523]:[INFO]:query_search: restaurant near Phuong Quan Hoa
+[2022-05-11 14:48:23,230]:[INFO]:Scrolling url ...
+[2022-05-11 14:48:36,788]:[INFO]:query_search: restaurant near Phuong Yen Hoa
+[2022-05-11 14:48:36,793]:[INFO]:query_search: restaurant near Phuong Trung Hoa
+[2022-05-11 14:48:36,798]:[INFO]:query_search: restaurant near Phuong Cat Linh
+[2022-05-11 14:48:36,802]:[INFO]:query_search: restaurant near Phuong Van Mieu
+[2022-05-11 14:48:36,807]:[INFO]:query_search: restaurant near Phuong Quoc Tu Giam
+[2022-05-11 14:48:36,813]:[INFO]:query_search: restaurant near Phuong Lang Thuong
+[2022-05-11 14:48:36,820]:[INFO]:query_search: restaurant near Phuong O Cho Dua
+[2022-05-11 14:48:36,824]:[INFO]:query_search: restaurant near Phuong Van Chuong
+[2022-05-11 14:48:36,828]:[INFO]:query_search: restaurant near Phuong Hang Bot
+[2022-05-11 14:48:36,831]:[INFO]:query_search: restaurant near Phuong Lang Ha
+[2022-05-11 14:48:36,835]:[INFO]:query_search: restaurant near Phuong Kham Thien
+[2022-05-11 14:48:36,840]:[INFO]:query_search: restaurant near Phuong Tho Quan
+[2022-05-11 14:48:36,844]:[INFO]:query_search: restaurant near Phuong Nam Dong
+[2022-05-11 14:48:36,848]:[INFO]:query_search: restaurant near Phuong Trung Phung
+[2022-05-11 14:48:36,852]:[INFO]:query_search: restaurant near Phuong Quang Trung
+[2022-05-11 14:48:36,856]:[INFO]:query_search: restaurant near Phuong Trung Liet
+[2022-05-11 14:48:36,860]:[INFO]:query_search: restaurant near Phuong Phuong Lien
+[2022-05-11 14:48:36,864]:[INFO]:query_search: restaurant near Phuong Thinh Quang
+[2022-05-11 14:48:36,868]:[INFO]:query_search: restaurant near Phuong Trung Tu
+[2022-05-11 14:48:36,873]:[INFO]:query_search: restaurant near Phuong Kim Lien
+[2022-05-11 14:48:36,879]:[INFO]:query_search: restaurant near Phuong Phuong Mai
+[2022-05-11 14:48:36,883]:[INFO]:query_search: restaurant near Phuong Nga Tu So
+[2022-05-11 14:48:36,887]:[INFO]:query_search: restaurant near Phuong Khuong Thuong
+[2022-05-11 14:48:36,890]:[INFO]:query_search: restaurant near Phuong Nguyen Du
+[2022-05-11 14:48:36,894]:[INFO]:query_search: restaurant near Phuong Bach Dang
+[2022-05-11 14:48:36,898]:[INFO]:query_search: restaurant near Phuong Pham Dinh Ho
+[2022-05-11 14:48:36,901]:[INFO]:query_search: restaurant near Phuong Le Dai Hanh
+[2022-05-11 14:48:36,905]:[INFO]:query_search: restaurant near Phuong Dong Nhan
+[2022-05-11 14:48:36,909]:[INFO]:query_search: restaurant near Phuong Pho Hue
+[2022-05-11 14:48:36,913]:[INFO]:query_search: restaurant near Phuong Dong Mac
+[2022-05-11 14:48:36,917]:[INFO]:query_search: restaurant near Phuong Thanh Luong
+[2022-05-11 14:48:36,921]:[INFO]:query_search: restaurant near Phuong Thanh Nhan
+[2022-05-11 14:48:36,925]:[INFO]:query_search: restaurant near Phuong Cau Den
+[2022-05-11 14:48:36,930]:[INFO]:query_search: restaurant near Phuong Bach Khoa
+[2022-05-11 14:48:36,934]:[INFO]:query_search: restaurant near Phuong Dong Tam
+[2022-05-11 14:48:36,938]:[INFO]:query_search: restaurant near Phuong Vinh Tuy
+[2022-05-11 14:48:36,942]:[INFO]:query_search: restaurant near Phuong Bach Mai
+[2022-05-11 14:48:36,946]:[INFO]:query_search: restaurant near Phuong Quynh Mai
+[2022-05-11 14:48:36,950]:[INFO]:query_search: restaurant near Phuong Quynh Loi
+[2022-05-11 14:48:36,954]:[INFO]:query_search: restaurant near Phuong Minh Khai
+[2022-05-11 14:48:36,958]:[INFO]:query_search: restaurant near Phuong Truong Dinh
+[2022-05-11 14:48:36,962]:[INFO]:query_search: restaurant near Phuong Thanh Tri
+[2022-05-11 14:48:36,966]:[INFO]:query_search: restaurant near Phuong Vinh Hung
+[2022-05-11 14:48:36,970]:[INFO]:query_search: restaurant near Phuong Dinh Cong
+[2022-05-11 14:48:36,974]:[INFO]:query_search: restaurant near Phuong Mai Dong
+[2022-05-11 14:48:36,978]:[INFO]:query_search: restaurant near Phuong Tuong Mai
+[2022-05-11 14:48:36,982]:[INFO]:query_search: restaurant near Phuong Dai Kim
+[2022-05-11 14:48:36,987]:[INFO]:query_search: restaurant near Phuong Tan Mai
+[2022-05-11 14:48:36,993]:[INFO]:query_search: restaurant near Phuong Hoang Van Thu
+[2022-05-11 14:48:36,998]:[INFO]:query_search: restaurant near Phuong Giap Bat
+[2022-05-11 14:48:37,002]:[INFO]:query_search: restaurant near Phuong Linh Nam
+[2022-05-11 14:48:37,006]:[INFO]:query_search: restaurant near Phuong Thinh Liet
+[2022-05-11 14:48:37,010]:[INFO]:query_search: restaurant near Phuong Tran Phu
+[2022-05-11 14:48:37,014]:[INFO]:query_search: restaurant near Phuong Hoang Liet
+[2022-05-11 14:48:37,018]:[INFO]:query_search: restaurant near Phuong Yen So
+[2022-05-11 14:48:37,021]:[INFO]:query_search: restaurant near Phuong Nhan Chinh
+[2022-05-11 14:48:37,025]:[INFO]:query_search: restaurant near Phuong Thuong Dinh
+[2022-05-11 14:48:37,029]:[INFO]:query_search: restaurant near Phuong Khuong Trung
+[2022-05-11 14:48:37,033]:[INFO]:query_search: restaurant near Phuong Khuong Mai
+[2022-05-11 14:48:37,036]:[INFO]:query_search: restaurant near Phuong Thanh Xuan Trung
+[2022-05-11 14:48:37,040]:[INFO]:query_search: restaurant near Phuong Phuong Liet
+[2022-05-11 14:48:37,043]:[INFO]:query_search: restaurant near Phuong Ha Dinh
+[2022-05-11 14:48:37,047]:[INFO]:query_search: restaurant near Phuong Khuong Dinh
+[2022-05-11 14:48:37,050]:[INFO]:query_search: restaurant near Phuong Thanh Xuan Bac
+[2022-05-11 14:48:37,053]:[INFO]:query_search: restaurant near Phuong Thanh Xuan Nam
+[2022-05-11 14:48:37,057]:[INFO]:query_search: restaurant near Phuong Kim Giang
+[2022-05-11 14:48:37,061]:[INFO]:query_search: restaurant near Phuong Cau Dien
+[2022-05-11 14:48:37,064]:[INFO]:query_search: restaurant near Phuong Xuan Phuong
+[2022-05-11 14:48:37,068]:[INFO]:query_search: restaurant near Phuong Phuong Canh
+[2022-05-11 14:48:37,071]:[INFO]:query_search: restaurant near Phuong My Dinh 1
+[2022-05-11 14:48:37,075]:[INFO]:query_search: restaurant near Phuong My Dinh 2
+[2022-05-11 14:48:37,079]:[INFO]:query_search: restaurant near Phuong Tay Mo
+[2022-05-11 14:48:37,084]:[INFO]:query_search: restaurant near Phuong Me Tri
+[2022-05-11 14:48:37,087]:[INFO]:query_search: restaurant near Phuong Phu Do
+[2022-05-11 14:48:37,090]:[INFO]:query_search: restaurant near Phuong Dai Mo
+[2022-05-11 14:48:37,093]:[INFO]:query_search: restaurant near Phuong Trung Van
+[2022-05-11 14:48:37,096]:[INFO]:query_search: restaurant near Phuong Thuong Cat
+[2022-05-11 14:48:37,100]:[INFO]:query_search: restaurant near Phuong Lien Mac
+[2022-05-11 14:48:37,103]:[INFO]:query_search: restaurant near Phuong Dong Ngac
+[2022-05-11 14:48:37,107]:[INFO]:query_search: restaurant near Phuong Duc Thang
+[2022-05-11 14:48:37,110]:[INFO]:query_search: restaurant near Phuong Thuy Phuong
+[2022-05-11 14:48:37,114]:[INFO]:query_search: restaurant near Phuong Tay Tuu
+[2022-05-11 14:48:37,117]:[INFO]:query_search: restaurant near Phuong Xuan Dinh
+[2022-05-11 14:48:37,120]:[INFO]:query_search: restaurant near Phuong Xuan Tao
+[2022-05-11 14:48:37,124]:[INFO]:query_search: restaurant near Phuong Minh Khai
+[2022-05-11 14:48:37,128]:[INFO]:query_search: restaurant near Phuong Co Nhue 1
+[2022-05-11 14:48:37,133]:[INFO]:query_search: restaurant near Phuong Co Nhue 2
+[2022-05-11 14:48:37,137]:[INFO]:query_search: restaurant near Phuong Phu Dien
+[2022-05-11 14:48:37,141]:[INFO]:query_search: restaurant near Phuong Phuc Dien
+[2022-05-11 14:48:37,144]:[INFO]:query_search: restaurant near Phuong Nguyen Trai
+[2022-05-11 14:48:37,148]:[INFO]:query_search: restaurant near Phuong Mo Lao
+[2022-05-11 14:48:37,151]:[INFO]:query_search: restaurant near Phuong Van Quan
+[2022-05-11 14:48:37,154]:[INFO]:query_search: restaurant near Phuong Van Phuc
+[2022-05-11 14:48:37,158]:[INFO]:query_search: restaurant near Phuong Yet Kieu
+[2022-05-11 14:48:37,161]:[INFO]:query_search: restaurant near Phuong Quang Trung
+[2022-05-11 14:48:37,165]:[INFO]:query_search: restaurant near Phuong La Khe
+[2022-05-11 14:48:37,168]:[INFO]:query_search: restaurant near Phuong Phu La
+[2022-05-11 14:48:37,172]:[INFO]:query_search: restaurant near Phuong Phuc La
+[2022-05-11 14:48:37,175]:[INFO]:query_search: restaurant near Phuong Ha Cau
+[2022-05-11 14:48:37,180]:[INFO]:query_search: restaurant near Phuong Yen Nghia
+[2022-05-11 14:48:37,184]:[INFO]:query_search: restaurant near Phuong Kien Hung
+[2022-05-11 14:48:37,187]:[INFO]:query_search: restaurant near Phuong Phu Lam
+[2022-05-11 14:48:37,192]:[INFO]:query_search: restaurant near Phuong Phu Luong
+[2022-05-11 14:48:37,196]:[INFO]:query_search: restaurant near Phuong Duong Noi
+[2022-05-11 14:48:37,201]:[INFO]:query_search: restaurant near Phuong Dong Mai
+[2022-05-11 14:48:37,206]:[INFO]:query_search: restaurant near Phuong Bien Giang
+[2022-05-11 14:59:01,166]:[INFO]:#-------------------------------------------------
+[2022-05-11 14:59:02,123]:[INFO]:query_search: restaurant near Phuong Quan Hoa
+[2022-05-11 14:59:13,885]:[INFO]:Scrolling url ...
+[2022-05-11 15:00:59,324]:[INFO]:all_link_restaurant: 180
+[2022-05-11 15:01:04,330]:[INFO]:Time run Phuong Quan Hoa: 0:00:02.036774 minutes
+[2022-05-11 15:01:04,331]:[INFO]:Save to data/url/restaurant_Phuong Quan Hoa.txt
+[2022-05-11 15:01:04,331]:[INFO]:query_search: restaurant near Phuong Yen Hoa
+[2022-05-11 15:01:16,891]:[INFO]:Scrolling url ...
+[2022-05-11 15:03:20,683]:[INFO]:all_link_restaurant: 220
+[2022-05-11 15:03:25,689]:[INFO]:Time run Phuong Yen Hoa: 0:00:02.355958 minutes
+[2022-05-11 15:03:25,689]:[INFO]:Save to data/url/restaurant_Phuong Yen Hoa.txt
+[2022-05-11 15:03:25,689]:[INFO]:query_search: restaurant near Phuong Trung Hoa
+[2022-05-11 15:03:37,495]:[INFO]:Scrolling url ...
+[2022-05-11 15:05:15,528]:[INFO]:all_link_restaurant: 160
+[2022-05-11 15:05:20,535]:[INFO]:Time run Phuong Trung Hoa: 0:00:01.914084 minutes
+[2022-05-11 15:05:20,535]:[INFO]:Save to data/url/restaurant_Phuong Trung Hoa.txt
+[2022-05-11 15:05:20,535]:[INFO]:query_search: restaurant near Phuong Cat Linh
+[2022-05-11 15:05:32,588]:[INFO]:Scrolling url ...
+[2022-05-11 15:07:26,369]:[INFO]:all_link_restaurant: 200
+[2022-05-11 15:07:31,376]:[INFO]:Time run Phuong Cat Linh: 0:00:02.180669 minutes
+[2022-05-11 15:07:31,376]:[INFO]:Save to data/url/restaurant_Phuong Cat Linh.txt
+[2022-05-11 15:07:31,376]:[INFO]:query_search: restaurant near Phuong Van Mieu
+[2022-05-11 15:07:43,122]:[INFO]:Scrolling url ...
+[2022-05-11 15:09:37,519]:[INFO]:all_link_restaurant: 200
+[2022-05-11 15:09:42,524]:[INFO]:Time run Phuong Van Mieu: 0:00:02.185778 minutes
+[2022-05-11 15:09:42,524]:[INFO]:Save to data/url/restaurant_Phuong Van Mieu.txt
+[2022-05-11 15:09:42,524]:[INFO]:query_search: restaurant near Phuong Quoc Tu Giam
+[2022-05-11 15:09:54,613]:[INFO]:Scrolling url ...
+[2022-05-11 15:11:39,655]:[INFO]:all_link_restaurant: 180
+[2022-05-11 15:11:44,657]:[INFO]:Time run Phuong Quoc Tu Giam: 0:00:02.035552 minutes
+[2022-05-11 15:11:44,658]:[INFO]:Save to data/url/restaurant_Phuong Quoc Tu Giam.txt
+[2022-05-11 15:11:44,658]:[INFO]:query_search: restaurant near Phuong Lang Thuong
+[2022-05-11 15:11:56,608]:[INFO]:Scrolling url ...
+[2022-05-11 15:13:58,448]:[INFO]:all_link_restaurant: 220
+[2022-05-11 15:14:03,456]:[INFO]:Time run Phuong Lang Thuong: 0:00:02.313286 minutes
+[2022-05-11 15:14:03,456]:[INFO]:Save to data/url/restaurant_Phuong Lang Thuong.txt
+[2022-05-11 15:14:03,456]:[INFO]:query_search: restaurant near Phuong O Cho Dua
+[2022-05-11 15:14:15,714]:[INFO]:Scrolling url ...
+[2022-05-11 15:16:17,384]:[INFO]:all_link_restaurant: 220
+[2022-05-11 15:16:22,390]:[INFO]:Time run Phuong O Cho Dua: 0:00:02.315561 minutes
+[2022-05-11 15:16:22,390]:[INFO]:Save to data/url/restaurant_Phuong O Cho Dua.txt
+[2022-05-11 15:16:22,391]:[INFO]:query_search: restaurant near Phuong Van Chuong
+[2022-05-11 15:16:34,412]:[INFO]:Scrolling url ...

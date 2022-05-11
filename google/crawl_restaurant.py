@@ -1,5 +1,7 @@
 import random
 import time
+import json
+import glob
 
 import pandas as pd
 from selenium import webdriver
@@ -58,6 +60,7 @@ def remove_accents(input_str):
             s += c
     return s
 
+# crawl with query search by town
 def read_ds(logger=logger_url):
     logger.info('#-------------------------------------------------')
     df = pd.read_csv('./data/DS_tinh_thanh.csv')
@@ -68,11 +71,28 @@ def read_ds(logger=logger_url):
     df_hn_core = df_hn[df_hn['Quận Huyện'].isin(list_district)]
     arr_town = df_hn_core['Phường Xã'].tolist()
 
-    driver = initDriver()
-    for town in arr_town[:]:
+    driver = None
+    for town in arr_town[22:]:
+        print('driver: ', driver)
+        if driver is None:
+            driver = initDriver()
+        with open('data/crawled_town.txt', 'r') as f:
+            arr_town_crawled = f.readlines()
+            f.close()
+            arr_town_crawled = [x.replace('\n', '') for x in arr_town_crawled]
+        if town in arr_town_crawled:
+            print(f'{town} is crawled')
+            continue
         query_search = f'restaurant near {town}'
         logger.info(f'query_search: {remove_accents(query_search)}')
-        crawl_restaurant(driver, query_search, town, logger=logger)
+        try:
+            crawl_restaurant(driver, query_search, town, logger=logger)
+            with open('data/crawled_town.txt', 'a') as f:
+                f.write(town+'\n')
+                f.close()
+        except Exception as e:
+            print('here', e)
+            driver.quit()
 
     return
 
@@ -85,6 +105,8 @@ def crawl_restaurant(driver, query_search, town, logger):
     inputSearchEle.send_keys(Keys.ENTER)
     time.sleep(8)
     logger.info('Scrolling url ...')
+
+    # scroll restaurant until end
     script_js = "function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))};var el_list=document.getElementsByClassName('hfpxzc');var count=1;while(el_list.length<20||count>100){count+=1;el_list=document.getElementsByClassName('hfpxzc');el=el_list[el_list.length-1];el.scrollTop=el.scrollHeight;el.scrollIntoView();await sleep(1000);console.log(el_list.length);if(el_list.length==20){count=1};console.log('count:',count)}"
     driver.execute_script(script_js)
 
@@ -94,7 +116,8 @@ def crawl_restaurant(driver, query_search, town, logger):
     all_link_res = []
     all_link_res.extend(arr_link_res)
 
-    # next-page
+    # scroll and goto next-page
+    # get link restaurant
     while(True):
         try:
             driver.find_element_by_id('ppdPk-Ej1Yeb-LgbsSe-tJiF1e').click()
@@ -128,8 +151,12 @@ def crawl_restaurant(driver, query_search, town, logger):
 
     return
 
-
-def crawl_restaurant_details(filename, logger=logger_details):
+"""
+@input: file contains list of restaurant urls
+@output: .csv
+"""
+def crawl_restaurant_details(filename, logger):
+    logger.info('#------------------------------------')
     begin = datetime.now()
     file_save = filename.replace('url', 'details')
     file_save = file_save.replace('txt', 'csv')
@@ -143,6 +170,7 @@ def crawl_restaurant_details(filename, logger=logger_details):
         print()
         details_dict = dict.fromkeys(keys, None)
         print('link:', link)
+        logger.info(f'link: {link}')
         driver.get(link)
         time.sleep(random.randint(3,7))
         try:
@@ -186,6 +214,7 @@ def crawl_restaurant_details(filename, logger=logger_details):
                 driver.execute_script(script)
                 arr_img_url = driver.find_elements_by_class_name('U39Pmb')
                 print('len(arr_img_url)', len(arr_img_url))
+                logger.info(f'Total img have: {len(arr_img_url)}')
                 for img_url in arr_img_url:
                     try:
                         raw_ele = img_url.get_attribute('style')
@@ -202,17 +231,16 @@ def crawl_restaurant_details(filename, logger=logger_details):
         except:
             pass
         print('res_arr_img_url: ', len(res_arr_img_url))
+        logger.info(f'Total img crawl: {len(res_arr_img_url)}')
         details_dict['List image'] = res_arr_img_url
 
-
         print('details_dict', details_dict)
+        logger.info(f'details_dict: {json.dumps(details_dict)}')
+        time.sleep(5)
+
         df = df.append(details_dict, ignore_index=True)
-        if idx >3 and 0: # luôn sai
-        # if idx > 3:
-            break
         if idx> 0 and idx %5==0:
             df.to_csv(file_save, index=False)
-            break
 
     # save
     print(datetime.now())
@@ -220,8 +248,30 @@ def crawl_restaurant_details(filename, logger=logger_details):
     print('Time run:', (end-begin)/60, 'minutes')
     print('Total extract:', len(df))
 
+    logger.info(f'Time run: {(end - begin) / 60} minutes')
+    logger.info(f'Total extract: {len(df)}')
+
 
     df.to_csv(file_save, index=False)
+    return
+
+
+
+import glob
+def read_details(logger=logger_details):
+    arr_filename_url = glob.glob('data/url/*.txt')
+    arr_filename_details = glob.glob('data/details/*.csv')
+    arr_town_crawl = [x.split("\\")[1].split('.')[0] for x in arr_filename_details]
+    for filename in arr_filename_url:
+        town = filename.split('\\')[1].split('.')[0]
+        if town not in arr_town_crawl:
+            print(f'Crawling {town}')
+            logger.info(f'Crawling {remove_accents(town)}')
+            time.sleep(3)
+            crawl_restaurant_details(filename, logger=logger_details)
+        else:
+            print(f'{town} is crawled')
+            continue
     return
 
 if __name__ =='__main__':
@@ -229,3 +279,4 @@ if __name__ =='__main__':
     read_ds()
 
     # crawl_restaurant_details(filename='./data/url/restaurant_Phường Phúc Xá.txt')
+#     read_details()
