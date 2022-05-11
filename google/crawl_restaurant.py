@@ -152,7 +152,7 @@ def crawl_restaurant(driver, query_search, town, logger):
 @input: file contains list of restaurant urls
 @output: .csv
 """
-def crawl_restaurant_details(filename, logger):
+def crawl_restaurant_details(filename, driver, logger):
     logger.info('#------------------------------------')
     begin = datetime.now()
     file_save = filename.replace('url', 'details')
@@ -160,7 +160,7 @@ def crawl_restaurant_details(filename, logger):
     with open(filename, 'r') as f:
         arr_link =f.readlines()
         arr_link = [x.replace('\n', '') for x in arr_link]
-    driver = initDriver()
+
     df = pd.DataFrame()
     keys = ['Company', 'Rating', 'Total Reviews', 'Address', 'Website', 'Phone', 'Image Url']
     for idx, link in enumerate(arr_link):
@@ -259,21 +259,47 @@ def read_details(logger=logger_details):
     arr_filename_url = glob.glob('data/url/*.txt')
     arr_filename_details = glob.glob('data/details/*.csv')
     arr_town_crawl = [x.split("\\")[1].split('.')[0] for x in arr_filename_details]
+
+    with open('data/crawled_town_details.txt', 'r') as f:
+        arr_crawled_town_details = f.readlines()
+        arr_crawled_town_details = [x.replace('\n', '') for x in arr_crawled_town_details]
+        f.close()
+
+    driver = None
     for filename in arr_filename_url:
+        if driver is None:
+            driver = initDriver()
         town = filename.split('\\')[1].split('.')[0]
-        if town not in arr_town_crawl:
+        if town not in arr_town_crawl and town not in arr_crawled_town_details:
             print(f'Crawling {town}')
             logger.info(f'Crawling {remove_accents(town)}')
             time.sleep(3)
-            crawl_restaurant_details(filename, logger=logger_details)
+            try:
+                crawl_restaurant_details(filename,driver, logger=logger_details)
+                with open('data/crawled_town_details.txt', 'a') as f:
+                    f.write(town+'\n')
+                    f.close()
+            except:
+                driver.quit()
         else:
             print(f'{town} is crawled')
             continue
     return
 
-if __name__ =='__main__':
-    # crawl_restaurant()
-    # read_ds()
+import argparse
+def run(args):
+    name = args.name
+    if name == 'crawl_url':
+        read_ds()
+    elif name == 'crawl_details':
+        read_details()
+    else:
+        print(f'Nothing function {name}')
 
-    read_details()
-    # crawl_restaurant_details(filename='./data/url/restaurant_Phường Phúc Xá.txt')
+    return
+
+parser = argparse.ArgumentParser(description='Say hello')
+parser.add_argument('--name', help='function run: crawl_url/crawl_details')
+args = parser.parse_args()
+if __name__ =='__main__':
+    run(args)
