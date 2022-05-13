@@ -1,17 +1,20 @@
+import pandas as pd
 import random
 import time
+from datetime import datetime
 import json
+import os
 import glob
 
-import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-import os
-from datetime import datetime
+from selenium.webdriver.common.action_chains import ActionChains
 
 import logging
 from tqdm import tqdm
+
+from utils import delete_cache, remove_accents
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -26,6 +29,9 @@ file_logger = logging.FileHandler(os.path.join(BASE_DIR, 'log/crawl_restaurant_d
 file_logger.setFormatter(logging.Formatter('[%(asctime)s]:[%(levelname)s]:%(message)s'))
 logger_details.setLevel(logging.INFO)
 logger_details.addHandler(file_logger)
+
+# init
+MINUTE_WAIT = 5
 
 
 def initDriver():
@@ -49,19 +55,10 @@ def initDriver():
     return driver
 
 
-def remove_accents(input_str):
-    s1 = u'ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ'
-    s0 = u'AAAAEEEIIOOOOUUYaaaaeeeiioooouuyAaDdIiUuOoUuAaAaAaAaAaAaAaAaAaAaAaAaEeEeEeEeEeEeEeEeIiIiOoOoOoOoOoOoOoOoOoOoOoOoUuUuUuUuUuUuUuYyYyYyYy'
-    s = ''
-    for c in input_str:
-        if c in s1:
-            s += s0[s1.index(c)]
-        else:
-            s += c
-    return s
+
 
 # crawl with query search by town
-def read_ds(logger=logger_url):
+def crawl_url(logger=logger_url):
     logger.info('#-------------------------------------------------')
     df = pd.read_csv('./data/DS_tinh_thanh.csv')
     df_hn = df[df['Tỉnh Thành Phố']=='Thành phố Hà Nội']
@@ -72,10 +69,18 @@ def read_ds(logger=logger_url):
     arr_town = df_hn_core['Phường Xã'].tolist()
 
     driver = None
-    for town in arr_town[22:]:
+    for idx, town in enumerate(arr_town[22:]):
         print('driver: ', driver)
+        
         if driver is None:
             driver = initDriver()
+        # resolve Max retries exceeded with url
+        if idx>0 and idx % 5==0:
+            driver.quit()
+            time.sleep(30)
+            driver = initDriver()
+        
+        
         with open('data/crawled_town.txt', 'r') as f:
             arr_town_crawled = f.readlines()
             f.close()
@@ -146,8 +151,6 @@ def crawl_restaurant(driver, query_search, town, logger):
     logger.info(f'Save to {remove_accents(file_save)}')
     print(f'Time run {town}: ', (end-begin)/60, 'minutes')
     print()
-    # driver.quit()
-    # driver.close()
 
     return
 
@@ -155,15 +158,14 @@ def crawl_restaurant(driver, query_search, town, logger):
 @input: file contains list of restaurant urls
 @output: .csv
 """
-def crawl_restaurant_details(filename, logger):
-    logger.info('#------------------------------------')
+def crawl_restaurant_details(filename, driver, logger):
     begin = datetime.now()
     file_save = filename.replace('url', 'details')
     file_save = file_save.replace('txt', 'csv')
     with open(filename, 'r') as f:
         arr_link =f.readlines()
         arr_link = [x.replace('\n', '') for x in arr_link]
-    driver = initDriver()
+
     df = pd.DataFrame()
     keys = ['Company', 'Rating', 'Total Reviews', 'Address', 'Website', 'Phone', 'Image Url']
     for idx, link in enumerate(arr_link):
@@ -255,28 +257,65 @@ def crawl_restaurant_details(filename, logger):
     df.to_csv(file_save, index=False)
     return
 
-
-
-import glob
-def read_details(logger=logger_details):
+def crawl_details(logger=logger_details):
     arr_filename_url = glob.glob('data/url/*.txt')
     arr_filename_details = glob.glob('data/details/*.csv')
-    arr_town_crawl = [x.split("\\")[1].split('.')[0] for x in arr_filename_details]
-    for filename in arr_filename_url:
-        town = filename.split('\\')[1].split('.')[0]
-        if town not in arr_town_crawl:
+
+    #     arr_town_crawl = [x.split("\\")[1].split('.')[0] for x in arr_filename_details]
+    arr_town_crawl = [x.split("details/")[1].split('.')[0] for x in arr_filename_details]
+
+    with open('data/crawled_town_details.txt', 'r') as f:
+        arr_crawled_town_details = f.readlines()
+        arr_crawled_town_details = [x.replace('\n', '') for x in arr_crawled_town_details]
+        f.close()
+
+    driver = None
+    for idx, filename in enumerate(arr_filename_url):
+        logger.info('#------------------------------------')
+        print('filename:', filename)
+        if driver is None:
+            print('init driver')
+            driver = initDriver()
+        
+        if idx>0 and idx % 5==0:
+            driver.quit()
+            for _ in tqdm(range(MINUTE_WAIT),desc=f"Delay {MINUTE_WAIT} minutes..."):
+                time.sleep(60)
+            driver = initDriver()
+            
+        town = filename.split('url/')[1].split('.')[0]
+        if town not in arr_town_crawl and town not in arr_crawled_town_details:
             print(f'Crawling {town}')
             logger.info(f'Crawling {remove_accents(town)}')
             time.sleep(3)
-            crawl_restaurant_details(filename, logger=logger_details)
+            try:
+                crawl_restaurant_details(filename,driver, logger=logger_details)
+                with open('data/crawled_town_details.txt', 'a') as f:
+                    f.write(town+'\n')
+                    f.close()
+            except Exception as e:
+                print(e)
+                driver.quit()
         else:
             print(f'{town} is crawled')
             continue
     return
 
-if __name__ =='__main__':
-    # crawl_restaurant()
-    read_ds()
 
-    # crawl_restaurant_details(filename='./data/url/restaurant_Phường Phúc Xá.txt')
-#     read_details()
+import argparse
+def run(args):
+    name = args.name
+    if name == 'crawl_url':
+        crawl_url()
+    elif name == 'crawl_details':
+        crawl_details()
+    else:
+        print(f'Not have function {name}')
+
+    return
+
+parser = argparse.ArgumentParser(description='Say hello')
+parser.add_argument('--name', help='function run: crawl_url/crawl_details')
+args = parser.parse_args()
+if __name__ =='__main__':
+    run(args)
